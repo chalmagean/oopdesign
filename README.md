@@ -1,3 +1,3 @@
 # OOP Design Patterns
 
-[Observer](observers/)
+[Observer](observer/)
