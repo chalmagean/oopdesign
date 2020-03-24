@@ -12,9 +12,27 @@ Objects should make their own decisions internally based on the information they
 
 By doing this, you will isolate responsibilities in different objects which are then easy to replace with other objects that play the same role.
 
-It looks like this: `user.company.address.street` vs. `user.company_street`.
-
 The exception to this rule is querying objects when filtering for example. You might have a list of objects you want to filter based on a query method like `.active?`. Try to pay special attention whenever you are using them so you don't add coupling to the caller.
+
+## Law of Demeter
+
+The Law of Demeter sometimes can look similar to Tell Don’t Ask Principle in implementation. But it has different underlying purpose.
+
+### The main points of Law of Demeter:
+
+* Each object should have only limited knowledge about other objects.
+* Each object should only talk to its friends; don’t talk to strangers.
+* Only talk to your immediate friends.
+
+The more objects you talk to, the more you run the risk of getting broken when one of them changes.
+
+A method of an object may only invoke methods on:
+* itself
+* its parameters
+* objects it creates
+* its instance variables in the class
+
+It looks like this: `user.company.address.street` vs. `user.company_street`.
 
 ## Example
 
